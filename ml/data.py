@@ -69,9 +69,9 @@ def process_data(
     X = np.concatenate([X_continuous, X_categorical], axis=1)
     return X, y, encoder, lb
 
-def apply_label(inference):
+def apply_label(prediction):
     """ Convert the binary label in a single inference sample into string output."""
-    if inference[0] == 1:
+    if prediction[0] == 1:
         return ">50K"
-    elif inference[0] == 0:
+    elif prediction[0] == 0:
         return "<=50K"
